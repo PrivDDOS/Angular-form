@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --blue-950: hsl(213, 96%, 18%);
+    --purple-600: hsl(243, 100%, 62%);
+    --blue-300: hsl(228, 100%, 84%);
+    --blue-200: hsl(206, 94%, 87%);
+    --red-500: hsl(354, 84%, 57%);
+}
+
+.text-dark-blue {
+    color: var(--blue-950)
+}
 
 .image-container {
   position: relative;

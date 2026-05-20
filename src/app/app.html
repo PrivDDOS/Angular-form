@@ -1,11 +1,14 @@
-<div class="w-100 vh-100 container d-flex flex-row py-5">
-  
+<div class="w-75 vh-100 container d-flex justify-content-center flex-row py-5">
   <div class="container-left w-25 vh-50">
     <div class="image-container position-relative h-100">
-      <img src="/assets/images/bg-sidebar-desktop.svg" alt="background">
-      
+      <img src="/assets/images/bg-sidebar-desktop.svg" alt="background" />
+
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
-        <h5 class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle">1</h5>
+        <h5
+          class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle"
+        >
+          1
+        </h5>
         <div class="d-flex flex-column ms-3">
           <p class="text-white text-uppercase small m-0">step 1</p>
           <p class="text-white text-uppercase fs-6">Your Info</p>
@@ -13,7 +16,11 @@
       </div>
 
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
-        <h5 class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle">2</h5>
+        <h5
+          class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle"
+        >
+          2
+        </h5>
         <div class="d-flex flex-column ms-3">
           <p class="text-white text-uppercase small m-0">step 2</p>
           <p class="text-white text-uppercase fs-6">Select Plan</p>
@@ -21,7 +28,11 @@
       </div>
 
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
-        <h5 class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle">3</h5>
+        <h5
+          class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle"
+        >
+          3
+        </h5>
         <div class="d-flex flex-column ms-3">
           <p class="text-white text-uppercase small m-0">step 3</p>
           <p class="text-white text-uppercase fs-6">Add-ons</p>
@@ -29,21 +40,27 @@
       </div>
 
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
-        <h5 class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle">4</h5>
+        <h5
+          class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle"
+        >
+          4
+        </h5>
         <div class="d-flex flex-column ms-3">
           <p class="text-white text-uppercase small m-0">step 4</p>
           <p class="text-white text-uppercase fs-6">Summary</p>
         </div>
       </div>
-
     </div>
   </div>
 
-  <div class="container-right w-75 vh-100">
-    <h1>right</h1>
+  <div class="container-right w-75 vh-50 py-5 ps-5">
+    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+      <div class="top">
+        <h3 class="fw-bold text-dark-blue">Personal info</h3>
+        <p class="small text-dark-blue">please provide your name, email address and phone number.</p>
+      </div>
+    </form>
   </div>
-  
 </div>
 
-
-<router-outlet />
+<router-outlet></router-outlet>
