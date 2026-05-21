@@ -1,11 +1,12 @@
 <div class="w-75 vh-100 container d-flex justify-content-center flex-row py-5">
-  <div class="container-left w-25 vh-50">
+  <div class="container-left w-25 h-100">
     <div class="image-container position-relative h-100">
       <img src="/assets/images/bg-sidebar-desktop.svg" alt="background" />
 
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
         <h5
-          class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle"
+          class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
+          [ngClass]="formStep === 1 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
         >
           1
         </h5>
@@ -17,7 +18,8 @@
 
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
         <h5
-          class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle"
+          class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
+          [ngClass]="formStep === 2 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
         >
           2
         </h5>
@@ -29,7 +31,8 @@
 
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
         <h5
-          class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle"
+          class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
+          [ngClass]="formStep === 3 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
         >
           3
         </h5>
@@ -41,7 +44,8 @@
 
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
         <h5
-          class="w-35px h-35px text-white d-flex align-items-center justify-content-center border border-white rounded-circle"
+          class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
+          [ngClass]="formStep === 4 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
         >
           4
         </h5>
@@ -53,12 +57,31 @@
     </div>
   </div>
 
-  <div class="container-right w-75 vh-50 py-5 ps-5">
+  <div class="container-right w-75 h-100 py-5 ps-5">
     <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
-      <div class="top">
-        <h3 class="fw-bold text-dark-blue">Personal info</h3>
-        <p class="small text-dark-blue">please provide your name, email address and phone number.</p>
+      <div *ngIf="formStep === 1">
+        <div class="pb-2">
+          <h3 class="fw-bold text-dark-blue">Personal info</h3>
+          <p class="small text-dark-blue">please provide your name, email address and phone number.</p>
+        </div>
+
+        <div class="d-flex flex-column w-55">
+          <label for="name" class="pb-2">Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Evan Fong" [(ngModel)]="clientInfo.name" required class="p-2">
+
+          <label for="name" class="pb-2 pt-4">Email Address</label>
+          <input type="text" id="name" name="name" placeholder="e.g. evanfong@can.com" [(ngModel)]="clientInfo.email" required class="p-2">
+
+          <label for="name" class="pb-2 pt-4">Phone Number</label>
+          <input type="text" id="name" name="name" placeholder="e.g. +1 234 567 8900" [(ngModel)]="clientInfo.phoneNum" required class="p-2">
+        </div>
+
+        <button type="button" class="btn btn-custom text-white">Next Step</button>
+
       </div>
+
+
+
     </form>
   </div>
 </div>

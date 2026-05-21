@@ -6,6 +6,7 @@ import { ClientInfo } from '../models/user.model';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, CommonModule, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
