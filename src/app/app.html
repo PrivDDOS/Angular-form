@@ -59,7 +59,8 @@
 
   <div class="container-right w-75 h-100 py-5 ps-5">
     <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="h-100">
-      <div *ngIf="formStep === 1" class="h-100 d-flex justify-content-center flex-column">
+      <div *ngIf="formStep === 2" class="h-100 d-flex justify-content-center flex-column">
+
         <div class="pb-2">
           <h3 class="fw-bold text-dark-blue">Personal info</h3>
           <p class="small text-dark-blue">please provide your name, email address and phone number.</p>
@@ -82,7 +83,116 @@
 
       </div>
 
+      <div *ngIf="formStep === 1" class="h-100 d-flex justify-content-center flex-column">
+        
+        <div class="pb-2">
+          <h3 class="fw-bold text-dark-blue">Select your plan</h3>
+          <p class="small text-dark-blue">You have the option of monthly or yearly billing.</p>
+        </div>
 
+        <div class="d-flex flex-row w-100">
+          
+          <div class="w-100 d-flex align-items-center flex-row">
+
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover">
+              <div>
+                <img src="/assets/images/icon-arcade.svg" alt="arcade" />
+              </div>
+              <div>
+                <p class="h6">Arcade</p>
+                <p>$9/mo</p>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover">
+              <div>
+                <img src="/assets/images/icon-advanced.svg" alt="advanced" />
+              </div>
+              <div>
+                <p class="h6">Advanced</p>
+                <p>$12/mo</p>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover">
+              <div>
+                <img src="/assets/images/icon-pro.svg" alt="pro" />
+              </div>
+              <div>
+                <p class="h6">Pro</p>
+                <p>$15/mo</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="d-flex flex-row justify-content-center align-items-center w-80 h-40p">
+          <div>
+            <p class="h6">Monthly</p>
+          </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            </div>
+          <div>
+            <p class="h6">Yearly</p>
+          </div>
+        </div>
+
+        <div class="mt-auto align-self-end">
+          <button type="button" class="btn btn-custom text-white">Next Step</button>
+        </div>
+
+      </div>
+
+      <div *ngIf="formStep === 3" class="h-100 d-flex justify-content-center flex-column">
+        
+        <div class="pb-2">
+          <h3 class="fw-bold text-dark-blue">Personal info</h3>
+          <p class="small text-dark-blue">please provide your name, email address and phone number.</p>
+        </div>
+
+        <div class="d-flex flex-column w-90">
+          <label for="name" class="pb-2">Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Evan Fong" [(ngModel)]="clientInfo.name" required class="p-2 border-0">
+
+          <label for="name" class="pb-2 pt-4">Email Address</label>
+          <input type="text" id="name" name="name" placeholder="e.g. evanfong@can.com" [(ngModel)]="clientInfo.email" required class="p-2 border-0">
+
+          <label for="name" class="pb-2 pt-4">Phone Number</label>
+          <input type="text" id="name" name="name" placeholder="e.g. +1 234 567 8900" [(ngModel)]="clientInfo.phoneNum" required class="p-2 border-0">
+        </div>
+
+        <div class="mt-auto align-self-end">
+          <button type="button" class="btn btn-custom text-white">Next Step</button>
+        </div>
+
+      </div>
+
+      <div *ngIf="formStep === 4" class="h-100 d-flex justify-content-center flex-column">
+        
+        <div class="pb-2">
+          <h3 class="fw-bold text-dark-blue">Personal info</h3>
+          <p class="small text-dark-blue">please provide your name, email address and phone number.</p>
+        </div>
+
+        <div class="d-flex flex-column w-90">
+          <label for="name" class="pb-2">Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Evan Fong" [(ngModel)]="clientInfo.name" required class="p-2 border-0">
+
+          <label for="name" class="pb-2 pt-4">Email Address</label>
+          <input type="text" id="name" name="name" placeholder="e.g. evanfong@can.com" [(ngModel)]="clientInfo.email" required class="p-2 border-0">
+
+          <label for="name" class="pb-2 pt-4">Phone Number</label>
+          <input type="text" id="name" name="name" placeholder="e.g. +1 234 567 8900" [(ngModel)]="clientInfo.phoneNum" required class="p-2 border-0">
+        </div>
+
+        <div class="mt-auto align-self-end">
+          <button type="button" class="btn btn-custom text-white">Next Step</button>
+        </div>
+
+      </div>
 
     </form>
   </div>

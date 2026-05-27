@@ -23,6 +23,10 @@
   background-color: var(--blue-950) !important;
 }
 
+.border-purple {
+  color: var(--purple-600) !important;
+}
+
 .image-container {
   position: relative;
 }
@@ -38,6 +42,32 @@
   width: 40%;
 }
 
+.w-140p {
+  width: 140px;
+}
+
 .w-90 {
   width: 90%;
+}
+
+.h-40p {
+  height: 40px;
+}
+
+.h-160p {
+  height: 160px;
+}
+
+.plan-hover {
+  cursor: pointer;
+}
+
+.plan-hover:hover {
+  border: 1px solid var(--purple-600);
+  border-radius: 8px;
+}
+
+.form-switch .form-check-input {
+  width: 4em !important;
+  height: 2em;
 }
