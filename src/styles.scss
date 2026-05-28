@@ -38,6 +38,10 @@
   padding: 0 0 0 2rem;
 }
 
+.h6 {
+  margin-bottom: 0 !important;
+}
+
 .w-40 {
   width: 40%;
 }
@@ -70,4 +74,21 @@
 .form-switch .form-check-input {
   width: 4em !important;
   height: 2em;
+  background-color: var(--blue-950);
+  border: none;
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  background-image: var(--bs-form-switch-bg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.form-switch .form-check-input:not(:checked) {
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  background-image: var(--bs-form-switch-bg);
+}
+
+.form-switch .form-check-input:checked {
+  background-color: var(--blue-950);
+  background-position: right center;
 }
