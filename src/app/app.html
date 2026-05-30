@@ -92,9 +92,12 @@
 
         <div class="d-flex flex-row w-100">
           
-          <div class="w-100 d-flex align-items-center flex-row">
+          <!-- Monthly Plan -->
+          <div class="w-100 d-flex align-items-center flex-row"
+          *ngIf="!planSwitch">
 
-            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover">
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover"
+            (click)="clientSelectedPlan('Arcade', 9)">
               <div>
                 <img src="/assets/images/icon-arcade.svg" alt="arcade" />
               </div>
@@ -104,7 +107,8 @@
               </div>
             </div>
 
-            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover">
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+            (click)="clientSelectedPlan('Advanced', 12)">
               <div>
                 <img src="/assets/images/icon-advanced.svg" alt="advanced" />
               </div>
@@ -114,7 +118,8 @@
               </div>
             </div>
 
-            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover">
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+            (click)="clientSelectedPlan('Pro', 15)">
               <div>
                 <img src="/assets/images/icon-pro.svg" alt="pro" />
               </div>
@@ -126,22 +131,70 @@
 
           </div>
 
+          <!-- Yearly Plan -->
+          <div class="w-100 d-flex align-items-center flex-row"
+          *ngIf="planSwitch">
+
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover"
+            (click)="clientSelectedPlan('Arcade', 90)">
+              <div>
+                <img src="/assets/images/icon-arcade.svg" alt="arcade" />
+              </div>
+              <div>
+                <p class="h6">Arcade</p>
+                <p class="mb-0">$90/yr</p>
+                <p>2 months free</p>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+            (click)="clientSelectedPlan('Advanced', 120)">
+              <div>
+                <img src="/assets/images/icon-advanced.svg" alt="advanced" />
+              </div>
+              <div>
+                <p class="h6">Advanced</p>
+                <p class="mb-0">$120/yr</p>
+                <p>2 months free</p>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+            (click)="clientSelectedPlan('Pro', 150)">
+              <div>
+                <img src="/assets/images/icon-pro.svg" alt="pro" />
+              </div>
+              <div>
+                <p class="h6">Pro</p>
+                <p class="mb-0">$150/yr</p>
+                <p>2 months free</p>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="d-flex flex-row justify-content-center align-items-center w-80 h-40p text-center">
+        <div class="d-flex flex-row justify-content-center align-items-center w-80 h-40p text-center mt-5">
           <div>
             <p class="h6 me-3">Monthly</p>
           </div>
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (change)="planSwitchBtn($event)">
             </div>
           <div>
             <p class="h6 ms-3">Yearly</p>
           </div>
         </div>
 
-        <div class="mt-auto align-self-end">
-          <button type="button" class="btn btn-custom text-white">Next Step</button>
+        <div class="mt-auto d-flex justify-content-between">
+          <div class="">
+            <button type="button" class="btn text-dark-blue">Go Back</button>
+          </div>
+  
+          <div class="">
+            <button type="button" class="btn btn-custom text-white">Next Step</button>
+          </div>
         </div>
 
       </div>

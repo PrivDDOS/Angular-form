@@ -16,11 +16,39 @@ export class App {
 
   formStep = 1;
 
+  // Step 1
   clientInfo = new ClientInfo('', '', '')
+
+  // Step 2
+  // Get client plan
+  selectedPlan: string = '';
+  selectedPlanPrice: number = 0;
+
+  // Switch plan option (Monthly/Yearly)
+  planSwitch: boolean = false;
 
   onSubmit(form: NgForm) {
     console.log('Your Info', {
-      client: this.clientInfo
+      client: this.clientInfo,
+      selectedPlan: this.selectedPlan,
+      planPrice: this.selectedPlanPrice,
+      planSwitch: this.planSwitch,
     })
   }
+  // Step 2 function
+  clientSelectedPlan(plan: string, price: number) {
+    if(this.selectedPlan === plan) {
+      this.selectedPlan = '';
+      this.selectedPlanPrice = 0
+    } else {
+      this.selectedPlan = plan;
+      this.selectedPlanPrice = price;
+    }
+  }
+
+  // Step 2 Plan switch
+  planSwitchBtn(event: any) {
+    this.planSwitch = event.target.checked
+  }
+
 }
