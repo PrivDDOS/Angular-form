@@ -23,8 +23,9 @@
   background-color: var(--blue-950) !important;
 }
 
-.border-purple {
-  color: var(--purple-600) !important;
+.plan-border {
+  border: 1px solid var(--purple-600);
+  border-radius: 8px;
 }
 
 .image-container {
