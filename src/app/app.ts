@@ -27,6 +27,9 @@ export class App {
   // Switch plan option (Monthly/Yearly)
   planSwitch: boolean = false;
 
+  // Step 3
+  selectedAddOns: string[] = [];
+
   onSubmit(form: NgForm) {
     console.log('Your Info', {
       client: this.clientInfo,

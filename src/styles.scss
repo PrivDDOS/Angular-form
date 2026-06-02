@@ -28,6 +28,11 @@
   border-radius: 8px;
 }
 
+.addons-border {
+  border: 1px solid var(--purple-600);
+  border-radius: 8px;
+}
+
 .image-container {
   position: relative;
 }
@@ -97,4 +102,8 @@
 .span {
   width: 4em !important;
   height: 2em;
+}
+
+.add-ons {
+  padding: 12px 10px 12px 10px;
 }
