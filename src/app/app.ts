@@ -54,4 +54,15 @@ export class App {
     this.planSwitch = event.target.checked
   }
 
+  // Step 3 Selected Add-ons
+  clientSelectedAddOns(addOn: string) {
+    const selectAddon = this.selectedAddOns.indexOf(addOn)
+
+    if(selectAddon > -1) {
+      this.selectedAddOns.splice(selectAddon, 1);
+    } else {
+      this.selectedAddOns.push(addOn)
+    }
+  }
+
 }
