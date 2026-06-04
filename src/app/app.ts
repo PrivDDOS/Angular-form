@@ -36,8 +36,19 @@ export class App {
       selectedPlan: this.selectedPlan,
       planPrice: this.selectedPlanPrice,
       planSwitch: this.planSwitch,
+      addOns: this.selectedAddOns,
     })
   }
+
+  // function for next and back button
+  nextStep(form: NgForm) {
+    this.formStep++;
+  }
+
+  lastStep(form: NgForm) {
+    this.formStep--
+  }
+
   // Step 2 function
   clientSelectedPlan(plan: string, price: number) {
     if(this.selectedPlan === plan) {
