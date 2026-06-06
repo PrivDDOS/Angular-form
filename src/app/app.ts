@@ -30,6 +30,7 @@ export class App {
   // Step 3
   selectedAddOns: string[] = [];
 
+
   onSubmit(form: NgForm) {
     console.log('Your Info', {
       client: this.clientInfo,
@@ -73,6 +74,19 @@ export class App {
       this.selectedAddOns.splice(selectAddon, 1);
     } else {
       this.selectedAddOns.push(addOn)
+    }
+  }
+
+  AddOnPrice(addOn: string) {
+    switch(addOn) {
+      case 'Online service':
+        return this.planSwitch ? 10 : 1;
+      case 'Larger storage':
+        return this.planSwitch ? 20 : 2;
+      case 'Customizable profile':
+        return this.planSwitch ? 20 : 2;
+      default:
+        return 0;
     }
   }
 
