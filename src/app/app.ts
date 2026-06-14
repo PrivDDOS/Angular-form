@@ -77,7 +77,7 @@ export class App {
     }
   }
 
-  AddOnPrice(addOn: string) {
+  addOnPrice(addOn: string) {
     switch(addOn) {
       case 'Online service':
         return this.planSwitch ? 10 : 1;
