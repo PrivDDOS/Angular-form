@@ -90,4 +90,11 @@ export class App {
     }
   }
 
+  // Step 4 Function to sum up the total
+  getTotal() {
+    const addOnsPrice = this.selectedAddOns.reduce((sum, addOn) => 
+      sum + this.addOnPrice(addOn), 0);
+    return this.selectedPlanPrice + addOnsPrice;
+  }
+
 }

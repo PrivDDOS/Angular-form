@@ -27,6 +27,11 @@
   background-color: var(--blue-950) !important;
 }
 
+.btn-margin-l-r {
+  --bs-btn-padding-x: 0 !important;
+  --bs-btn-padding-y: 0 !important;
+}
+
 .plan-border {
   border: 1px solid var(--purple-600);
   border-radius: 8px;
@@ -110,4 +115,13 @@
 
 .add-ons {
   padding: 12px 10px 12px 10px;
+}
+
+.btn-change-plan {
+  text-decoration: none;
+  color: var(--purple-600);
+}
+
+.btn-change-plan:hover {
+  text-decoration: underline;
 }

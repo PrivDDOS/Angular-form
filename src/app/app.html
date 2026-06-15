@@ -59,7 +59,7 @@
 
   <div class="container-right w-75 h-100 py-5 ps-5">
     <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="h-100">
-      <div *ngIf="formStep === 4" class="h-100 d-flex justify-content-center flex-column">
+      <div *ngIf="formStep === 1" class="h-100 d-flex justify-content-center flex-column">
 
         <div class="pb-2">
           <h3 class="fw-bold text-dark-blue">Personal info</h3>
@@ -276,7 +276,7 @@
 
       </div>
 
-      <div *ngIf="formStep === 1" class="h-100 d-flex justify-content-center flex-column">
+      <div *ngIf="formStep === 4" class="h-100 d-flex justify-content-center flex-column">
         
         <div class="pb-2">
           <h3 class="fw-bold text-dark-blue">Finishing up</h3>
@@ -287,23 +287,37 @@
 
           <div class="d-flex justify-content-between align-items-start">
             <div>
-              <p class="h6 fw-bold text-dark-blue">{{ selectedPlan | titlecase }} ({{ planSwitch ? 'Yearly' : 'Monthly' }})</p>
-              <button class="btn text-purple" (click)="formStep = 2">Change</button>
+              <p class="h6 fw-bolder text-dark-blue">{{ selectedPlan | titlecase }} ({{ planSwitch ? 'Yearly' : 'Monthly' }})</p>
+              <button class="btn btn-margin-l-r btn-change-plan" (click)="formStep = 2">Change</button>
             </div>
             <div>
               ${{ selectedPlanPrice }}/{{ planSwitch ? 'yr' : 'mo' }}
             </div>
           </div>
 
-          <div class="w-full">
+          <div class="w-full mt-4">
 
-            <div *ngFor="let addOn of selectedAddOns">
-              <span class="h6 fw-bold text-dark-blue">{{ addOn }}</span>
-              <span>+${{ addOnPrice(addOn) }}/{{ planSwitch ? 'yr' : 'mo' }}</span>
+            <div *ngFor="let addOn of selectedAddOns"
+            class="d-flex justify-content-between align-items-start mt-2">
+              <div>
+                <span class="h6 fw-light text-dark-blue">{{ addOn }}</span>
+              </div>
+              <div>
+                <span>+${{ addOnPrice(addOn) }}/{{ planSwitch ? 'yr' : 'mo' }}</span>
+              </div>
             </div>
 
             <div *ngIf="selectedAddOns.length === 0">
               No add-ons selected
+            </div>
+
+            <div class="d-flex justify-content-between align-items-start mt-5">
+              <div>
+                <p class="h6 fw-medium text-dark-blue">Total per {{ planSwitch ? 'yearly' : 'monthly' }}</p>
+              </div>
+              <div>
+                <p>+${{ getTotal() }}/{{ planSwitch ? 'yr' : 'mo' }}</p>
+              </div>
             </div>
 
           </div>
