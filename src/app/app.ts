@@ -43,7 +43,12 @@ export class App {
 
   // function for next and back button
   nextStep(form: NgForm) {
-    this.formStep++;
+    if (form.invalid) {
+      form.form.markAllAsTouched()
+      return;
+    } else {
+      this.formStep++;
+    }
   }
 
   lastStep(form: NgForm) {
