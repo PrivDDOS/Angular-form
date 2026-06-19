@@ -1,7 +1,14 @@
 <div class="w-50 vh-100 container d-flex justify-content-center flex-row py-5">
   <div class="container-left w-40 h-100">
     <div class="image-container position-relative h-100">
-      <img src="/assets/images/bg-sidebar-desktop.svg" alt="background" />
+      <picture>
+        <!-- Mobile image -->
+        <source media="(max-width: 768px)" srcset="/assets/images/bg-sidebar-mobile.svg">
+        
+        <!-- Desktop image -->
+        <img src="/assets/images/bg-sidebar-desktop.svg" alt="background" />
+        
+      </picture>
 
       <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
         <h5
