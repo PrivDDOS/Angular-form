@@ -27,6 +27,14 @@
   background-color: var(--blue-950) !important;
 }
 
+.screen-width {
+  width: 50%;
+}
+
+.banner-width {
+  width: 40%;
+}
+
 .btn-margin-l-r {
   --bs-btn-padding-x: 0 !important;
   --bs-btn-padding-y: 0 !important;
@@ -59,10 +67,6 @@
 
 .p {
   margin-bottom: 0 !important;
-}
-
-.w-40 {
-  width: 40%;
 }
 
 .w-140p {
@@ -128,4 +132,16 @@
 
 .btn-change-plan:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .screen-width {
+    width: 100%;
+  }
+  .banner-width {
+    width: 100%;
+  }
+  .img-custom {
+    width: 100%;
+  }
 }
