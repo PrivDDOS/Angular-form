@@ -1,79 +1,83 @@
 <div class="w-100 vh-100 d-flex justify-content-center align-items-center">
-  <div class="screen-width vh-100 d-flex justify-content-center align-items-center flex-md-row flex-column py-5">
-    <div class="container-left banner-width h-100">
-      <div class="image-container position-relative h-100">
+  <div
+    class="screen-width vh-100 d-flex justify-content-center align-items-center flex-md-row flex-column py-5"
+  >
+    <div class="container-left banner-width banner-height">
+      <div class="image-container position-relative banner-height">
         <picture>
           <!-- Mobile image -->
-          <source media="(max-width: 768px)" srcset="/assets/images/bg-sidebar-mobile.svg">
-          
+          <source media="(max-width: 768px)" srcset="/assets/images/bg-sidebar-mobile.svg" />
+
           <!-- Desktop image -->
-          <img src="/assets/images/bg-sidebar-desktop.svg" alt="background" class="img-custom"/>
-          
+          <img src="/assets/images/bg-sidebar-desktop.svg" alt="background" class="img-custom" />
         </picture>
-  
-        <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
-          <h5
-            class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
-            [ngClass]="formStep === 1 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
-          >
-            1
-          </h5>
-          <div class="d-flex flex-column ms-3">
-            <p class="text-white text-uppercase small m-0">step 1</p>
-            <p class="text-white text-uppercase fs-6">Your Info</p>
+
+        <div class="text-overlay d-flex flex-md-column flex-row justify-content-md-start justify-content-center h-100">
+          <div class="w-auto d-flex align-items-center gap-0">
+            <h5
+              class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
+              [ngClass]="formStep === 1 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
+            >
+              1
+            </h5>
+            <div class="d-flex flex-column ms-3 d-none d-md-block">
+              <p class="text-white text-uppercase small m-0">step 1</p>
+              <p class="text-white text-uppercase fs-6">Your Info</p>
+            </div>
           </div>
-        </div>
   
-        <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
-          <h5
-            class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
-            [ngClass]="formStep === 2 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
-          >
-            2
-          </h5>
-          <div class="d-flex flex-column ms-3">
-            <p class="text-white text-uppercase small m-0">step 2</p>
-            <p class="text-white text-uppercase fs-6">Select Plan</p>
+          <div class="w-auto d-flex align-items-center gap-0">
+            <h5
+              class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
+              [ngClass]="formStep === 2 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
+            >
+              2
+            </h5>
+            <div class="d-flex flex-column ms-3 d-none d-md-block">
+              <p class="text-white text-uppercase small m-0">step 2</p>
+              <p class="text-white text-uppercase fs-6">Select Plan</p>
+            </div>
           </div>
-        </div>
   
-        <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
-          <h5
-            class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
-            [ngClass]="formStep === 3 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
-          >
-            3
-          </h5>
-          <div class="d-flex flex-column ms-3">
-            <p class="text-white text-uppercase small m-0">step 3</p>
-            <p class="text-white text-uppercase fs-6">Add-ons</p>
+          <div class="w-auto d-flex align-items-center gap-0">
+            <h5
+              class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
+              [ngClass]="formStep === 3 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
+            >
+              3
+            </h5>
+            <div class="d-flex flex-column ms-3 d-none d-md-block">
+              <p class="text-white text-uppercase small m-0">step 3</p>
+              <p class="text-white text-uppercase fs-6">Add-ons</p>
+            </div>
           </div>
-        </div>
   
-        <div class="text-overlay w-auto d-flex justify-content-center align-items-center gap-0">
-          <h5
-            class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
-            [ngClass]="formStep === 4 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
-          >
-            4
-          </h5>
-          <div class="d-flex flex-column ms-3">
-            <p class="text-white text-uppercase small m-0">step 4</p>
-            <p class="text-white text-uppercase fs-6">Summary</p>
+          <div class="w-auto d-flex align-items-center gap-0">
+            <h5
+              class="w-35px h-35px d-flex align-items-center justify-content-center border border-white rounded-circle"
+              [ngClass]="formStep === 4 ? 'bg-active text-dark-blue' : 'bg-transparent text-white'"
+            >
+              4
+            </h5>
+            <div class="d-flex flex-column ms-3 d-none d-md-block">
+              <p class="text-white text-uppercase small m-0">step 4</p>
+              <p class="text-white text-uppercase fs-6">Summary</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  
+
     <div class="container-right w-75 h-100 py-5 ps-5">
       <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="h-100">
         <div *ngIf="formStep === 1" class="h-100 d-flex justify-content-center flex-column">
-  
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Personal info</h3>
-            <p class="small text-dark-blue">please provide your name, email address and phone number.</p>
+            <p class="small text-dark-blue">
+              please provide your name, email address and phone number.
+            </p>
           </div>
-  
+
           <div class="d-flex flex-column w-90">
             <div class="d-flex align-items-center">
               <label for="name" class="pb-2 fw-medium">Name</label>
@@ -83,8 +87,17 @@
                 }
               </div>
             </div>
-            <input type="text" id="name" name="name" #name="ngModel" placeholder="e.g. Evan Fong" [(ngModel)]="clientInfo.name" required class="p-2 border-0">
-  
+            <input
+              type="text"
+              id="name"
+              name="name"
+              #name="ngModel"
+              placeholder="e.g. Evan Fong"
+              [(ngModel)]="clientInfo.name"
+              required
+              class="p-2 border-0"
+            />
+
             <div class="d-flex align-items-center">
               <label for="name" class="pb-2 pt-4">Email Address</label>
               <div class="ms-auto">
@@ -93,8 +106,17 @@
                 }
               </div>
             </div>
-            <input type="text" id="email" name="email" #email="ngModel" placeholder="e.g. evanfong@can.com" [(ngModel)]="clientInfo.email" required class="p-2 border-0">
-  
+            <input
+              type="text"
+              id="email"
+              name="email"
+              #email="ngModel"
+              placeholder="e.g. evanfong@can.com"
+              [(ngModel)]="clientInfo.email"
+              required
+              class="p-2 border-0"
+            />
+
             <div class="d-flex align-items-center">
               <label for="name" class="pb-2 pt-4">Phone Number</label>
               <div class="ms-auto">
@@ -103,31 +125,44 @@
                 }
               </div>
             </div>
-            <input type="text" id="phone" name="phone" #phoneNum="ngModel" placeholder="e.g. +1 234 567 8900" [(ngModel)]="clientInfo.phoneNum" required class="p-2 border-0">
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              #phoneNum="ngModel"
+              placeholder="e.g. +1 234 567 8900"
+              [(ngModel)]="clientInfo.phoneNum"
+              required
+              class="p-2 border-0"
+            />
           </div>
-  
+
           <div class="mt-auto align-self-end">
-            <button type="button" class="btn btn-custom text-white" [disabled]="clientForm.invalid" (click)="nextStep(clientForm)">Next Step</button>
+            <button
+              type="button"
+              class="btn btn-custom text-white"
+              [disabled]="clientForm.invalid"
+              (click)="nextStep(clientForm)"
+            >
+              Next Step
+            </button>
           </div>
-  
         </div>
-  
+
         <div *ngIf="formStep === 2" class="h-100 d-flex justify-content-center flex-column">
-          
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Select your plan</h3>
             <p class="small text-dark-blue">You have the option of monthly or yearly billing.</p>
           </div>
-  
+
           <div class="d-flex flex-row w-100">
-            
             <!-- Monthly Plan -->
-            <div class="w-100 d-flex align-items-center flex-row"
-            *ngIf="!planSwitch">
-  
-              <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover"
-              [ngClass]="{ 'plan-border' : selectedPlan === 'Arcade' }"
-              (click)="clientSelectedPlan('Arcade', 9)">
+            <div class="w-100 d-flex align-items-center flex-row" *ngIf="!planSwitch">
+              <div
+                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover"
+                [ngClass]="{ 'plan-border': selectedPlan === 'Arcade' }"
+                (click)="clientSelectedPlan('Arcade', 9)"
+              >
                 <div>
                   <img src="/assets/images/icon-arcade.svg" alt="arcade" />
                 </div>
@@ -136,10 +171,12 @@
                   <p>$9/mo</p>
                 </div>
               </div>
-  
-              <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
-              [ngClass]="{ 'plan-border' : selectedPlan === 'Advanced' }"
-              (click)="clientSelectedPlan('Advanced', 12)">
+
+              <div
+                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+                [ngClass]="{ 'plan-border': selectedPlan === 'Advanced' }"
+                (click)="clientSelectedPlan('Advanced', 12)"
+              >
                 <div>
                   <img src="/assets/images/icon-advanced.svg" alt="advanced" />
                 </div>
@@ -148,10 +185,12 @@
                   <p>$12/mo</p>
                 </div>
               </div>
-  
-              <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
-              [ngClass]="{ 'plan-border' : selectedPlan === 'Pro' }"
-              (click)="clientSelectedPlan('Pro', 15)">
+
+              <div
+                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+                [ngClass]="{ 'plan-border': selectedPlan === 'Pro' }"
+                (click)="clientSelectedPlan('Pro', 15)"
+              >
                 <div>
                   <img src="/assets/images/icon-pro.svg" alt="pro" />
                 </div>
@@ -160,16 +199,15 @@
                   <p>$15/mo</p>
                 </div>
               </div>
-  
             </div>
-  
+
             <!-- Yearly Plan -->
-            <div class="w-100 d-flex align-items-center flex-row"
-            *ngIf="planSwitch">
-  
-              <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover"
-              [ngClass]="{ 'plan-border' : selectedPlan === 'Arcade' }"
-              (click)="clientSelectedPlan('Arcade', 90)">
+            <div class="w-100 d-flex align-items-center flex-row" *ngIf="planSwitch">
+              <div
+                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover"
+                [ngClass]="{ 'plan-border': selectedPlan === 'Arcade' }"
+                (click)="clientSelectedPlan('Arcade', 90)"
+              >
                 <div>
                   <img src="/assets/images/icon-arcade.svg" alt="arcade" />
                 </div>
@@ -179,10 +217,12 @@
                   <p>2 months free</p>
                 </div>
               </div>
-  
-              <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
-              [ngClass]="{ 'plan-border' : selectedPlan === 'Advanced' }"
-              (click)="clientSelectedPlan('Advanced', 120)">
+
+              <div
+                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+                [ngClass]="{ 'plan-border': selectedPlan === 'Advanced' }"
+                (click)="clientSelectedPlan('Advanced', 120)"
+              >
                 <div>
                   <img src="/assets/images/icon-advanced.svg" alt="advanced" />
                 </div>
@@ -192,10 +232,12 @@
                   <p>2 months free</p>
                 </div>
               </div>
-  
-              <div class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
-              [ngClass]="{ 'plan-border' : selectedPlan === 'Pro' }"
-              (click)="clientSelectedPlan('Pro', 150)">
+
+              <div
+                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+                [ngClass]="{ 'plan-border': selectedPlan === 'Pro' }"
+                (click)="clientSelectedPlan('Pro', 150)"
+              >
                 <div>
                   <img src="/assets/images/icon-pro.svg" alt="pro" />
                 </div>
@@ -205,50 +247,68 @@
                   <p>2 months free</p>
                 </div>
               </div>
-  
             </div>
-  
           </div>
-  
-          <div class="d-flex flex-row justify-content-center align-items-center w-80 h-40p text-center mt-5">
+
+          <div
+            class="d-flex flex-row justify-content-center align-items-center w-80 h-40p text-center mt-5"
+          >
             <div>
               <p class="h6 me-3">Monthly</p>
             </div>
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (change)="planSwitchBtn($event)">
-              </div>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+                (change)="planSwitchBtn($event)"
+              />
+            </div>
             <div>
               <p class="h6 ms-3">Yearly</p>
             </div>
           </div>
-  
+
           <div class="mt-auto d-flex justify-content-between">
             <div class="">
-              <button type="button" class="btn text-dark-blue" (click)="lastStep(clientForm)">Go Back</button>
+              <button type="button" class="btn text-dark-blue" (click)="lastStep(clientForm)">
+                Go Back
+              </button>
             </div>
-    
+
             <div class="">
-              <button type="button" class="btn btn-custom text-white" (click)="nextStep(clientForm)">Next Step</button>
+              <button
+                type="button"
+                class="btn btn-custom text-white"
+                (click)="nextStep(clientForm)"
+              >
+                Next Step
+              </button>
             </div>
           </div>
-  
         </div>
-  
+
         <div *ngIf="formStep === 3" class="h-100 d-flex justify-content-center flex-column">
-          
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Pick add-ons</h3>
             <p class="small text-dark-blue">Add-ons help enhance your gaming experience.</p>
           </div>
-  
+
           <div class="d-flex flex-column w-100">
-            
-            <div class="d-flex flex-row align-items-center add-ons mb-3"
-            [ngClass]="{'addons-border' : selectedAddOns.includes('Online service')}"
-            (click)="clientSelectedAddOns('Online service')"
+            <div
+              class="d-flex flex-row align-items-center add-ons mb-3"
+              [ngClass]="{ 'addons-border': selectedAddOns.includes('Online service') }"
+              (click)="clientSelectedAddOns('Online service')"
             >
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="check1" name="option1" [checked]="selectedAddOns.includes('Online service')">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check1"
+                  name="option1"
+                  [checked]="selectedAddOns.includes('Online service')"
+                />
               </div>
               <div class="d-flex flex-column justify-content-center">
                 <p class="h6">Online service</p>
@@ -258,13 +318,20 @@
                 <p class="h6">+{{ addOnPrice('Online service') }}/{{ planSwitch ? 'yr' : 'mo' }}</p>
               </div>
             </div>
-            
-            <div class="d-flex flex-row align-items-center add-ons mb-3"
-            [ngClass]="{'addons-border' : selectedAddOns.includes('Larger storage')}"
-            (click)="clientSelectedAddOns('Larger storage')"
+
+            <div
+              class="d-flex flex-row align-items-center add-ons mb-3"
+              [ngClass]="{ 'addons-border': selectedAddOns.includes('Larger storage') }"
+              (click)="clientSelectedAddOns('Larger storage')"
             >
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="check1" name="option1" [checked]="selectedAddOns.includes('Larger storage')">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check1"
+                  name="option1"
+                  [checked]="selectedAddOns.includes('Larger storage')"
+                />
               </div>
               <div class="d-flex flex-column justify-content-center">
                 <p class="h6">Larger storage</p>
@@ -274,60 +341,76 @@
                 <p class="h6">+{{ addOnPrice('Larger storage') }}/{{ planSwitch ? 'yr' : 'mo' }}</p>
               </div>
             </div>
-  
-            <div class="d-flex flex-row align-items-center add-ons"
-            [ngClass]="{'addons-border' : selectedAddOns.includes('Customizable profile')}"
-            (click)="clientSelectedAddOns('Customizable profile')"
+
+            <div
+              class="d-flex flex-row align-items-center add-ons"
+              [ngClass]="{ 'addons-border': selectedAddOns.includes('Customizable profile') }"
+              (click)="clientSelectedAddOns('Customizable profile')"
             >
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="check1" name="option1" [checked]="selectedAddOns.includes('Customizable profile')">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check1"
+                  name="option1"
+                  [checked]="selectedAddOns.includes('Customizable profile')"
+                />
               </div>
               <div class="d-flex flex-column justify-content-center">
                 <p class="h6">Customizable profile</p>
                 <p class="mb-0">Custom theme on your profile</p>
               </div>
               <div class="ms-auto">
-                <p class="h6">+{{ addOnPrice('Customizable profile') }}/{{ planSwitch ? 'yr' : 'mo' }}</p>
+                <p class="h6">
+                  +{{ addOnPrice('Customizable profile') }}/{{ planSwitch ? 'yr' : 'mo' }}
+                </p>
               </div>
             </div>
-  
           </div>
-  
+
           <div class="mt-auto d-flex justify-content-between">
             <div class="">
-              <button type="button" class="btn text-dark-blue" (click)="lastStep(clientForm)">Go Back</button>
+              <button type="button" class="btn text-dark-blue" (click)="lastStep(clientForm)">
+                Go Back
+              </button>
             </div>
-    
+
             <div class="">
-              <button type="button" class="btn btn-custom text-white" (click)="nextStep(clientForm)">Next Step</button>
+              <button
+                type="button"
+                class="btn btn-custom text-white"
+                (click)="nextStep(clientForm)"
+              >
+                Next Step
+              </button>
             </div>
           </div>
-  
         </div>
-  
+
         <div *ngIf="formStep === 4" class="h-100 d-flex justify-content-center flex-column">
-          
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Finishing up</h3>
             <p class="small text-dark-blue">Double check everything looks OK before confirming.</p>
           </div>
-  
+
           <div class="d-flex flex-column w-100">
-  
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="h6 fw-bolder text-dark-blue">{{ selectedPlan | titlecase }} ({{ planSwitch ? 'Yearly' : 'Monthly' }})</p>
-                <button class="btn btn-margin-l-r btn-change-plan" (click)="formStep = 2">Change</button>
+                <p class="h6 fw-bolder text-dark-blue">
+                  {{ selectedPlan | titlecase }} ({{ planSwitch ? 'Yearly' : 'Monthly' }})
+                </p>
+                <button class="btn btn-margin-l-r btn-change-plan" (click)="formStep = 2">
+                  Change
+                </button>
               </div>
-              <div>
-                ${{ selectedPlanPrice }}/{{ planSwitch ? 'yr' : 'mo' }}
-              </div>
+              <div>${{ selectedPlanPrice }}/{{ planSwitch ? 'yr' : 'mo' }}</div>
             </div>
-  
+
             <div class="w-full mt-4">
-  
-              <div *ngFor="let addOn of selectedAddOns"
-              class="d-flex justify-content-between align-items-start mt-2">
+              <div
+                *ngFor="let addOn of selectedAddOns"
+                class="d-flex justify-content-between align-items-start mt-2"
+              >
                 <div>
                   <span class="h6 fw-light text-dark-blue">{{ addOn }}</span>
                 </div>
@@ -335,49 +418,55 @@
                   <span>+${{ addOnPrice(addOn) }}/{{ planSwitch ? 'yr' : 'mo' }}</span>
                 </div>
               </div>
-  
-              <div *ngIf="selectedAddOns.length === 0">
-                No add-ons selected
-              </div>
-  
+
+              <div *ngIf="selectedAddOns.length === 0">No add-ons selected</div>
+
               <div class="d-flex justify-content-between align-items-start mt-5">
                 <div>
-                  <p class="h6 fw-medium text-dark-blue">Total per {{ planSwitch ? 'yearly' : 'monthly' }}</p>
+                  <p class="h6 fw-medium text-dark-blue">
+                    Total per {{ planSwitch ? 'yearly' : 'monthly' }}
+                  </p>
                 </div>
                 <div>
                   <p>+${{ getTotal() }}/{{ planSwitch ? 'yr' : 'mo' }}</p>
                 </div>
               </div>
-  
             </div>
           </div>
-  
+
           <div class="mt-auto d-flex justify-content-between">
             <div class="">
-              <button type="button" class="btn text-dark-blue" (click)="lastStep(clientForm)">Go Back</button>
+              <button type="button" class="btn text-dark-blue" (click)="lastStep(clientForm)">
+                Go Back
+              </button>
             </div>
-    
+
             <div class="">
-              <button type="button" class="btn btn-custom text-white" (click)="nextStep(clientForm)">Next Step</button>
+              <button
+                type="button"
+                class="btn btn-custom text-white"
+                (click)="nextStep(clientForm)"
+              >
+                Next Step
+              </button>
             </div>
           </div>
-  
         </div>
-  
+
         <div *ngIf="formStep === 5" class="h-100 d-flex justify-content-center flex-column">
-          
           <div class="w-full d-flex justify-content-center align-items-center flex-column">
             <div class="mb-4">
-              <img src="./assets/images/icon-thank-you.svg" alt="thank you">
+              <img src="./assets/images/icon-thank-you.svg" alt="thank you" />
             </div>
             <div class="d-flex justify-content-center align-items-center flex-column">
               <p class="h4">Thank you!</p>
-              <p class="text-center w-422px">Thanks for confirming your subscription! We hope you have fun using our platform if you ever need support please feel free to email us at loremipsum@loremgame.com</p>
+              <p class="text-center w-422px">
+                Thanks for confirming your subscription! We hope you have fun using our platform if
+                you ever need support please feel free to email us at loremipsum@loremgame.com
+              </p>
             </div>
           </div>
-  
         </div>
-  
       </form>
     </div>
   </div>

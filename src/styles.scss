@@ -138,10 +138,17 @@
   .screen-width {
     width: 100%;
   }
+
   .banner-width {
-    width: 100%;
+    width: 100% !important;
   }
+
+  .banner-height {
+    height: 90% !important;
+  }
+
   .img-custom {
     width: 100%;
+    height: 150%;
   }
 }
