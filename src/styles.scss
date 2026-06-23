@@ -55,10 +55,7 @@
 }
 
 .text-overlay {
-  position: absolute;
-  top: 20px; /* Adjust as needed */
-  left: 20px; /* Adjust as needed */
-  padding: 0 0 0 2rem;
+  gap: 2rem !important;
 }
 
 .h6 {
@@ -85,6 +82,10 @@
   height: 160px;
 }
 
+.desktop-height {
+  height: 100% !important;
+}
+
 .plan-hover {
   cursor: pointer;
 }
@@ -93,6 +94,7 @@
   border: 1px solid var(--purple-600);
   border-radius: 8px;
 }
+
 
 .form-switch .form-check-input {
   width: 4em !important;
@@ -144,11 +146,30 @@
   }
 
   .banner-height {
-    height: 90% !important;
+    height: 40vh !important;
   }
 
   .img-custom {
     width: 100%;
-    height: 150%;
+  }
+
+  .text-overlay:nth-of-type(1) {
+    top: -2.5rem !important;
+  }
+
+  .position-inherit {
+    position: inherit !important;
+  }
+
+  .mobile-form {
+    top: -5rem !important;
+    z-index: 9999;
+    background-color: white;
+    padding: 30px 30px 0 30px;
+    border-radius: 10px;
+  }
+
+  .mobile-height {
+    height: 70vh !important;
   }
 }

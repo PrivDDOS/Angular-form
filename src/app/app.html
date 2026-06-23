@@ -1,6 +1,6 @@
-<div class="w-100 vh-100 d-flex justify-content-center align-items-center">
+<div class="w-100 vh-100 d-md-flex justify-content-md-center align-items-md-center">
   <div
-    class="screen-width vh-100 d-flex justify-content-center align-items-center flex-md-row flex-column py-5"
+    class="screen-width vh-100 d-flex justify-content-center align-items-center flex-md-row flex-column py-md-5 position-relative"
   >
     <div class="container-left banner-width banner-height">
       <div class="image-container position-relative banner-height">
@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <div class="container-right w-75 h-100 py-5 ps-5">
+    <div class="container-right mobile-form w-75 desktop-height mobile-height py-md-5 ps-md-5 position-inherit">
       <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="h-100">
         <div *ngIf="formStep === 1" class="h-100 d-flex justify-content-center flex-column">
           <div class="pb-2">
