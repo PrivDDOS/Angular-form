@@ -68,8 +68,8 @@
       </div>
     </div>
 
-    <div class="container-right mobile-form w-75 desktop-height mobile-height py-md-5 ps-md-5 position-inherit">
-      <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="h-100">
+    <div class="container-right mobile-form w-75 desktop-height py-md-5 ps-md-5 position-inherit">
+      <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="form-desktop-height form-mobile-height">
         <div *ngIf="formStep === 1" class="h-100 d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Personal info</h3>
