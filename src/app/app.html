@@ -69,8 +69,8 @@
     </div>
 
     <div class="container-right mobile-form w-75 desktop-height py-md-5 ps-md-5 position-inherit">
-      <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="form-desktop-height form-mobile-height">
-        <div *ngIf="formStep === 1" class="h-100 d-flex justify-content-center flex-column">
+      <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="h-100">
+        <div *ngIf="formStep === 1" class="form-desktop-height form-mobile-height d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Personal info</h3>
             <p class="small text-dark-blue">
@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 2" class="h-100 d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 2" class="form-desktop-height form-mobile-height-step2 d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Select your plan</h3>
             <p class="small text-dark-blue">You have the option of monthly or yearly billing.</p>
@@ -289,7 +289,7 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 3" class="h-100 d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 3" class="form-desktop-height d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Pick add-ons</h3>
             <p class="small text-dark-blue">Add-ons help enhance your gaming experience.</p>
@@ -387,7 +387,7 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 4" class="h-100 d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 4" class="form-desktop-height d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Finishing up</h3>
             <p class="small text-dark-blue">Double check everything looks OK before confirming.</p>
@@ -453,7 +453,7 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 5" class="h-100 d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 5" class="form-desktop-height d-flex justify-content-center flex-column">
           <div class="w-full d-flex justify-content-center align-items-center flex-column">
             <div class="mb-4">
               <img src="./assets/images/icon-thank-you.svg" alt="thank you" />
