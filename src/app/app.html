@@ -70,7 +70,7 @@
 
     <div class="container-right mobile-form w-75 desktop-height py-md-5 ps-md-5 position-inherit">
       <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="h-100">
-        <div *ngIf="formStep === 1" class="form-desktop-height form-mobile-height d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 2" class="form-desktop-height form-mobile-height d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Personal info</h3>
             <p class="small text-dark-blue">
@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 2" class="form-desktop-height form-mobile-height-step2 d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 1" class="form-desktop-height form-mobile-height-step2 d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Select your plan</h3>
             <p class="small text-dark-blue">You have the option of monthly or yearly billing.</p>
@@ -157,94 +157,94 @@
 
           <div class="d-flex flex-row w-100">
             <!-- Monthly Plan -->
-            <div class="w-100 d-flex align-items-center flex-row" *ngIf="!planSwitch">
+            <div class="w-100 d-flex align-items-mad-center align-items-start flex-md-row flex-column" *ngIf="!planSwitch">
               <div
-                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover"
+                class="d-flex flex-md-column flex-row justify-content-md-around w-plan-custom h-plan-custom ps-3 plan-hover plan-padding-top planbox-margin-bottom"
                 [ngClass]="{ 'plan-border': selectedPlan === 'Arcade' }"
                 (click)="clientSelectedPlan('Arcade', 9)"
               >
                 <div>
                   <img src="/assets/images/icon-arcade.svg" alt="arcade" />
                 </div>
-                <div>
-                  <p class="h6">Arcade</p>
+                <div class="plan-content">
+                  <p class="h6 fw-bolder">Arcade</p>
                   <p>$9/mo</p>
                 </div>
               </div>
 
               <div
-                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+                class="d-flex flex-md-column flex-row justify-content-md-around w-plan-custom h-plan-custom ps-3 ms-md-3 plan-hover plan-padding-top planbox-margin-bottom"
                 [ngClass]="{ 'plan-border': selectedPlan === 'Advanced' }"
                 (click)="clientSelectedPlan('Advanced', 12)"
               >
                 <div>
                   <img src="/assets/images/icon-advanced.svg" alt="advanced" />
                 </div>
-                <div>
-                  <p class="h6">Advanced</p>
+                <div class="plan-content">
+                  <p class="h6 fw-bolder">Advanced</p>
                   <p>$12/mo</p>
                 </div>
               </div>
 
               <div
-                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+                class="d-flex flex-md-column flex-row justify-content-md-around w-plan-custom h-plan-custom ps-3 ms-3 plan-hover plan-padding-top planbox-margin-bottom"
                 [ngClass]="{ 'plan-border': selectedPlan === 'Pro' }"
                 (click)="clientSelectedPlan('Pro', 15)"
               >
                 <div>
                   <img src="/assets/images/icon-pro.svg" alt="pro" />
                 </div>
-                <div>
-                  <p class="h6">Pro</p>
+                <div class="plan-content">
+                  <p class="h6 fw-bolder">Pro</p>
                   <p>$15/mo</p>
                 </div>
               </div>
             </div>
 
             <!-- Yearly Plan -->
-            <div class="w-100 d-flex align-items-center flex-row" *ngIf="planSwitch">
+            <div class="w-100 d-flex align-items-md-center align-items-start flex-md-row flex-column" *ngIf="planSwitch">
               <div
-                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 plan-hover"
+                class="d-flex flex-md-column flex-row justify-content-md-around w-plan-custom h-plan-custom ps-3 plan-hover plan-padding-top planbox-margin-bottom"
                 [ngClass]="{ 'plan-border': selectedPlan === 'Arcade' }"
                 (click)="clientSelectedPlan('Arcade', 90)"
               >
                 <div>
                   <img src="/assets/images/icon-arcade.svg" alt="arcade" />
                 </div>
-                <div>
-                  <p class="h6">Arcade</p>
+                <div class="plan-content">
+                  <p class="h6 fw-bolder">Arcade</p>
                   <p class="mb-0">$90/yr</p>
-                  <p>2 months free</p>
+                  <p class="fw-medium">2 months free</p>
                 </div>
               </div>
 
               <div
-                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+                class="d-flex flex-md-column flex-row justify-content-md-around w-plan-custom h-plan-custom ps-3 ms-md-3 plan-hover plan-padding-top planbox-margin-bottom"
                 [ngClass]="{ 'plan-border': selectedPlan === 'Advanced' }"
                 (click)="clientSelectedPlan('Advanced', 120)"
               >
                 <div>
                   <img src="/assets/images/icon-advanced.svg" alt="advanced" />
                 </div>
-                <div>
-                  <p class="h6">Advanced</p>
+                <div class="plan-content">
+                  <p class="h6 fw-bolder">Advanced</p>
                   <p class="mb-0">$120/yr</p>
-                  <p>2 months free</p>
+                  <p class="fw-medium">2 months free</p>
                 </div>
               </div>
 
               <div
-                class="d-flex flex-column justify-content-around w-140p h-160p ps-3 ms-3 plan-hover"
+                class="d-flex flex-md-column flex-row justify-content-md-around w-plan-custom h-plan-custom ps-3 ms-3 plan-hover plan-padding-top planbox-margin-bottom"
                 [ngClass]="{ 'plan-border': selectedPlan === 'Pro' }"
                 (click)="clientSelectedPlan('Pro', 150)"
               >
                 <div>
                   <img src="/assets/images/icon-pro.svg" alt="pro" />
                 </div>
-                <div>
-                  <p class="h6">Pro</p>
+                <div class="plan-content">
+                  <p class="h6 fw-bolder">Pro</p>
                   <p class="mb-0">$150/yr</p>
-                  <p>2 months free</p>
+                  <p class="fw-medium">2 months free</p>
                 </div>
               </div>
             </div>

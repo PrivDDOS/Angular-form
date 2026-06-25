@@ -66,7 +66,7 @@
   margin-bottom: 0 !important;
 }
 
-.w-140p {
+.w-plan-custom {
   width: 140px;
 }
 
@@ -78,7 +78,7 @@
   height: 40px;
 }
 
-.h-160p {
+.h-plan-custom {
   height: 160px;
 }
 
@@ -179,5 +179,25 @@
   // step 2 mobile
   .form-mobile-height-step2 {
     height: 100vh !important;
+  }
+
+  .w-plan-custom {
+    width: 100% !important;
+  }
+
+  .h-plan-custom {
+    height: 130px;
+  }
+
+  .planbox-margin-bottom {
+    margin-bottom: 10px;
+  }
+
+  .plan-padding-top {
+    padding-top: 30px;
+  }
+
+  .plan-content {
+    padding-left: 16px;
   }
 }
