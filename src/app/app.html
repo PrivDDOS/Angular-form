@@ -2,8 +2,8 @@
   <div
     class="screen-width vh-100 d-flex justify-content-center align-items-center flex-md-row flex-column py-md-5 position-relative"
   >
-    <div class="container-left banner-width banner-height">
-      <div class="image-container position-relative banner-height">
+    <div class="container-left banner-width banner-height ">
+      <div class="image-container position-relative banner-height img-position-top">
         <picture>
           <!-- Mobile image -->
           <source media="(max-width: 768px)" srcset="/assets/images/bg-sidebar-mobile.svg" />
@@ -70,7 +70,7 @@
 
     <div class="container-right mobile-form w-75 desktop-height py-md-5 ps-md-5 position-inherit">
       <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)" class="h-100">
-        <div *ngIf="formStep === 2" class="form-desktop-height form-mobile-height d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 1" class="form-desktop-height form-mobile-height d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Personal info</h3>
             <p class="small text-dark-blue">
@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 1" class="form-desktop-height form-mobile-height-step2 d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 2" class="form-desktop-height form-mobile-height d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Select your plan</h3>
             <p class="small text-dark-blue">You have the option of monthly or yearly billing.</p>
@@ -289,7 +289,7 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 3" class="form-desktop-height d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 3" class="form-desktop-height form-mobile-height d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Pick add-ons</h3>
             <p class="small text-dark-blue">Add-ons help enhance your gaming experience.</p>
@@ -297,7 +297,7 @@
 
           <div class="d-flex flex-column w-100">
             <div
-              class="d-flex flex-row align-items-center add-ons mb-3"
+              class="d-flex flex-row align-items-center add-ons mb-3 addon-padding"
               [ngClass]="{ 'addons-border': selectedAddOns.includes('Online service') }"
               (click)="clientSelectedAddOns('Online service')"
             >
@@ -320,7 +320,7 @@
             </div>
 
             <div
-              class="d-flex flex-row align-items-center add-ons mb-3"
+              class="d-flex flex-row align-items-center add-ons mb-3 addon-padding"
               [ngClass]="{ 'addons-border': selectedAddOns.includes('Larger storage') }"
               (click)="clientSelectedAddOns('Larger storage')"
             >
@@ -343,7 +343,7 @@
             </div>
 
             <div
-              class="d-flex flex-row align-items-center add-ons"
+              class="d-flex flex-row align-items-center add-ons addon-padding"
               [ngClass]="{ 'addons-border': selectedAddOns.includes('Customizable profile') }"
               (click)="clientSelectedAddOns('Customizable profile')"
             >
@@ -387,7 +387,7 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 4" class="form-desktop-height d-flex justify-content-center flex-column">
+        <div *ngIf="formStep === 4" class="form-desktop-height form-mobile-height d-flex justify-content-center flex-column">
           <div class="pb-2">
             <h3 class="fw-bold text-dark-blue">Finishing up</h3>
             <p class="small text-dark-blue">Double check everything looks OK before confirming.</p>
@@ -453,14 +453,14 @@
           </div>
         </div>
 
-        <div *ngIf="formStep === 5" class="form-desktop-height d-flex justify-content-center flex-column">
-          <div class="w-full d-flex justify-content-center align-items-center flex-column">
+        <div *ngIf="formStep === 5" class="form-desktop-height form-mobile-height d-flex justify-content-md-center justify-content-start flex-column">
+          <div class="w-full d-flex justify-content-center align-items-center flex-column finish-padding-top">
             <div class="mb-4">
               <img src="./assets/images/icon-thank-you.svg" alt="thank you" />
             </div>
             <div class="d-flex justify-content-center align-items-center flex-column">
-              <p class="h4">Thank you!</p>
-              <p class="text-center w-422px">
+              <p class="h4 fw-bolder">Thank you!</p>
+              <p class="text-center w-422px w-290px">
                 Thanks for confirming your subscription! We hope you have fun using our platform if
                 you ever need support please feel free to email us at loremipsum@loremgame.com
               </p>

@@ -40,3 +40,13 @@
 .text-overlay:nth-of-type(4) {
     top: 15rem;
 }
+
+@media (max-width: 768px) {
+    .text-overlay {
+        top: -5% !important;
+    }
+
+    .w-290px {
+        width: 290px;
+    }
+}
