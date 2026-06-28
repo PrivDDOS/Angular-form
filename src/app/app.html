@@ -95,7 +95,8 @@
               placeholder="e.g. Evan Fong"
               [(ngModel)]="clientInfo.name"
               required
-              class="p-2 border-0"
+              class="p-2 input-border"
+              [ngClass]="{ 'input-danger' : name.invalid && (name.touched || name.dirty) }"
             />
 
             <div class="d-flex align-items-center">
@@ -114,7 +115,8 @@
               placeholder="e.g. evanfong@can.com"
               [(ngModel)]="clientInfo.email"
               required
-              class="p-2 border-0"
+              class="p-2 input-border"
+              [ngClass]="{ 'input-danger' : email.invalid && (email.touched || email.dirty) }"
             />
 
             <div class="d-flex align-items-center">
@@ -133,7 +135,8 @@
               placeholder="e.g. +1 234 567 8900"
               [(ngModel)]="clientInfo.phoneNum"
               required
-              class="p-2 border-0"
+              class="p-2 input-border"
+              [ngClass]="{ 'input-danger' : phoneNum.invalid && (phoneNum.touched || phoneNum.dirty) }"
             />
           </div>
 

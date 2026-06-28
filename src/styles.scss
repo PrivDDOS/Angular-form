@@ -23,8 +23,28 @@
   background-color: var(--blue-200) !important;
 }
 
+.input-border {
+  border: none;
+}
+
+.input-border:focus {
+  border: 1px solid var(--purple-600) !important;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-danger {
+  border: 1px solid #dc3545 !important;
+  border-radius: 8px;
+  outline: none;
+}
+
 .btn.btn-custom {
   background-color: var(--blue-950) !important;
+}
+
+.btn.btn-custom:hover {
+  background-color: var(--purple-600) !important;
 }
 
 .screen-width {
