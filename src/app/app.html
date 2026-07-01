@@ -82,8 +82,12 @@
             <div class="d-flex align-items-center">
               <label for="name" class="pb-2 fw-medium">Name</label>
               <div class="ms-auto">
-                @if (name.invalid && (name.touched || name.dirty)) {
+                @if (name.errors?.['required'] && (name.touched || name.dirty)) {
                   <p class="text text-danger fw-medium p">This field is required</p>
+                }
+
+                @if (name.errors?.['pattern'] && (name.touched || name.dirty)) {
+                  <p class="text text-danger fw-medium p">No special symbol or number.</p>
                 }
               </div>
             </div>
@@ -93,6 +97,7 @@
               name="name"
               #name="ngModel"
               placeholder="e.g. Evan Fong"
+              pattern="^[A-Za-zÀ-ỹ' -]{1,30}$"
               [(ngModel)]="clientInfo.name"
               required
               class="p-2 input-border"
@@ -102,18 +107,23 @@
             <div class="d-flex align-items-center">
               <label for="name" class="pb-2 pt-4">Email Address</label>
               <div class="ms-auto">
-                @if (email.invalid && (email.touched || email.dirty)) {
-                  <p class="text text-danger fw-medium p">This field is required</p>
+                @if (email.errors?.['required'] && email.touched) {
+                  <p class="text text-danger fw-medium p">Email is required</p>
+                }
+
+                @if (email.errors?.['email'] && (email.touched || email.dirty)) {
+                  <p class="text text-danger fw-medium p">Please enter a valid email.</p>
                 }
               </div>
             </div>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               #email="ngModel"
               placeholder="e.g. evanfong@can.com"
               [(ngModel)]="clientInfo.email"
+              email
               required
               class="p-2 input-border"
               [ngClass]="{ 'input-danger' : email.invalid && (email.touched || email.dirty) }"
@@ -122,17 +132,23 @@
             <div class="d-flex align-items-center">
               <label for="name" class="pb-2 pt-4">Phone Number</label>
               <div class="ms-auto">
-                @if (phoneNum.invalid && (phoneNum.touched || phoneNum.dirty)) {
+                @if (phoneNum.errors?.['required'] && phoneNum.touched) {
                   <p class="text text-danger fw-medium p">This field is required</p>
+                }
+
+                @if (phoneNum.errors?.['pattern'] && (phoneNum.touched || phoneNum.dirty)) {
+                  <p class="text text-danger fw-medium p">Must be a phone number.</p>
                 }
               </div>
             </div>
             <input
-              type="text"
-              id="phone"
-              name="phone"
+              type="tel"
+              id="tel"
+              name="tel"
               #phoneNum="ngModel"
               placeholder="e.g. +1 234 567 8900"
+              inputmode="numeric"
+              pattern="^\+?[0-9 ]{8,15}$"
               [(ngModel)]="clientInfo.phoneNum"
               required
               class="p-2 input-border"
