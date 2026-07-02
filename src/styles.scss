@@ -27,6 +27,11 @@
   border: none;
 }
 
+.input-border:hover {
+  border: 1px solid var(--purple-600) !important;
+  border-radius: 8px;
+}
+
 .input-border:focus {
   border: 1px solid var(--purple-600) !important;
   border-radius: 8px;
